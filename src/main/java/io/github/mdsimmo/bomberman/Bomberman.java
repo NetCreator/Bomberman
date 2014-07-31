@@ -20,6 +20,7 @@ public class Bomberman extends JavaPlugin {
 		new Config();
 		new GameCommander();
 		Game.loadGames();
+		CustomEntityType.registerEntities();
 	}
 	
 	@Override
@@ -28,5 +29,6 @@ public class Bomberman extends JavaPlugin {
 			Game.findGame(game).terminate();
 			Game.findGame(game).saveGame();
 		}
+		CustomEntityType.unregisterEntities();
 	}
 }
